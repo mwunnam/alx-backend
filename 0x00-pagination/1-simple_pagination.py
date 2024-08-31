@@ -40,6 +40,14 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        Get a page of data from the dataset
+        Args:
+            page (int): The current page number (1-indexed).
+            page_size (int): The number of items per page.
+        Returns:
+            List[List]: A List of rows corresponding to the data.
+        """
         assert isinstance(page, int) and page > 0, "Page must be an integer and greater than 0"
         assert isinstance(page_size, int) and page_size > 0, "Page size must be an integer and greated than 0"
 
