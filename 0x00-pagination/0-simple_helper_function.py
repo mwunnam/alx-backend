@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Index Function that return the starting index an ending index"""
 from typing import Tuple
 
