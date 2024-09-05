@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """FIFO Caching"""
-from typing import Any
 from base_caching import BaseCaching
 
 
@@ -10,28 +9,30 @@ class FIFOCache(BaseCaching):
         super().__init__()
         self.cache_order = []
 
-    def put(self, key: str, item: any) -> None:
+    def put(self, key, item):
         """
         Adds a new to the cache system if there is space, if no space
         the first item in the dictionary is discarded to make room
         the item discarded is printed
         """
 
-        if key is not None or item is not None:
-            if key not in self.cache_data:
-                self.cache_order.append(key)
+        if key is None or item is None:
+            return None
 
-            if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-                first_key = self.cache_order.pop(0)
-                del self.cache_data[first_key]
-                print(f'DISCARDED: {first_key}')
 
-            self.cache_data[key] = item
+        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+            first_key = self.cache_order.pop(0)
+            del self.cache_data[first_key]
+            print(f'DISCARD: {first_key}')
 
-    def get(self, key: str) -> Any:
+        self.cache_data[key] = item
+        self.cache_order.append(key)
+
+    def get(self, key):
         """
         Gets item from the cache system
         """
         if key is None or key not in self.cache_data:
             return None
+
         return self.cache_data.get(key, None)
