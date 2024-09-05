@@ -6,6 +6,7 @@ from base_caching import BaseCaching
 class FIFOCache(BaseCaching):
     """FIFO Caching system"""
     def __init__(self):
+        """class initialization"""
         super().__init__()
         self.cache_order = []
 
@@ -18,7 +19,6 @@ class FIFOCache(BaseCaching):
 
         if key is None or item is None:
             return None
-
 
         if key not in self.cache_data:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
