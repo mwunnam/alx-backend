@@ -7,7 +7,6 @@ import csv
 import math
 from typing import List
 from typing import Dict
-from typing import Any
 
 
 class Server:
@@ -44,9 +43,10 @@ class Server:
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """This returns data with respect to the deleted records"""
 
-        assert index is not None, "index is out of range"
-        assert index >= 0, "index is out of range"
-        assert index >= len(self.indexed_dataset()), "index is out of range"
+        assert isinstance(index, int) and index >= 0, "index is out of range"
+        assert isinstance(page_size, int) and page_size > 0,  \
+            "index is out of range"
+        assert index < len(self.indexed_dataset()), "index is out of range"
 
         data = []
         current_index = index
