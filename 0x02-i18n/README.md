@@ -89,20 +89,20 @@ This is a Python libray that brings the Olson tz database into python, making it
 ### Basic Usage:
 	1. Installation: `pip install pytz`
 	2. Basic program
-		```Python
-		import pytz
-		from datatime import datatime
+```Python
+	import pytz
+	from datatime import datatime
 
-		# Getting the current time in UTC
-		utc_time = datatime.utcnow()
+	# Getting the current time in UTC
+	utc_time = datatime.utcnow()
 
-		# Converting UTC time to a specific timezone
- 		tz = pytz.timezone('America/New_York')
- 		local_time = utc_time.replace(tzinfo=pytz.utc).astimezone(tz)
- 		print(f'UTC time: {utc_time}')
- 		print(f'Local time: {local_time}')
+	# Converting UTC time to a specific timezone
+	tz = pytz.timezone('America/New_York')
+	local_time = utc_time.replace(tzinfo=pytz.utc).astimezone(tz)
+	print(f'UTC time: {utc_time}')
+	print(f'Local time: {local_time}')
 
-		# List all time Zones
-		for tz in pytz.all_timezones:
-			print(tz)
-		```
+# List all time Zones
+	for tz in pytz.all_timezones:
+		print(tz)
+```
