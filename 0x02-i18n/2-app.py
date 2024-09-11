@@ -26,13 +26,13 @@ def get_locale():
     """Determins the match with the supported languages"""
     accepted_languages = request.accept_languages
     best_match = accepted_languages.best_match(app.config['LANGUAGES'])
-    return best_match
+    return best_match or 'en'
 
 
 @app.route('/')
 def welcome():
     """Welcome"""
-    return render_template('1-index.html')
+    return render_template('2-index.html')
 
 
 if __name__ == "__main__":
