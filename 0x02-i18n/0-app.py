@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
+    """Welcome"""
     return render_template('0-index.html')
 
 
