@@ -87,8 +87,8 @@ This is a Python libray that brings the Olson tz database into python, making it
 	* Wide Range of Time Zones: Supports all time zones defined by the Olson database.
 
 ### Basic Usage:
-	1. Installation: `pip install pytz`
-	2. Basic program
+1. Installation: `pip install pytz`
+2. Basic program
 ```Python
 	import pytz
 	from datatime import datatime
