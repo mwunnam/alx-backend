@@ -118,3 +118,13 @@ This is a Python libray that brings the Olson tz database into python, making it
 4. Flask natively supports loading configurations from class using `app.config.from_object()`. eg: `app.config.from_object(Config)`.
 5. Extensibility:
 	* Class is inherently more extensible. eg if you need more fonficuration later like reading from environment variables or files provides a natural place to encapsulate that logic
+
+## Task 2:
+request.accept_languages: A property of Flask's Request object that provides information about the prefferred language by the client. This infomatio is gotten from the Accept-Language HTTP header
+This Accept_Language Header is sent by the clinet (client browser) it list preffered languages in order of preference
+This object has Methods:
+* `best_match()`: it finds the best match between the accepted languages in the list of supported languages
+	* It returns the language tag that is closest to the supported languages list
+	* Example `accepted_languages.best_match(['en', 'fr']) might return 'en' if the client prefers English
+* Values: This property gives a list of languages, sorted by the client's preference
+	* Example might be `accepted_languages.values` might return `['en-Us', 'en', 'fr']`
