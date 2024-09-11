@@ -11,6 +11,8 @@ app = Flask(__name__)
 class Config:
     """Languge Configurations Class"""
     LANGUAGES = ["en", "fr"]
+    BABEL_DEFAULT_LOCALE = "en"
+    BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
 app.config.from_object(Config)
@@ -20,7 +22,7 @@ babel = Babel(app)
 
 @app.route('/')
 def welcome():
-    return render_template('1-index.html')
+    """Welcome""" return render_template('1-index.html')
 
 
 if __name__ == "__main__":
