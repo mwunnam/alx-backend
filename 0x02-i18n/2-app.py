@@ -14,6 +14,7 @@ class Config:
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
+    SECRET_KEY = "Nothingfornow"
 
 
 app.config.from_object(Config)
