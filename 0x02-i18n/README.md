@@ -106,3 +106,15 @@ This is a Python libray that brings the Olson tz database into python, making it
 	for tz in pytz.all_timezones:
 		print(tz)
 ```
+
+## Task 1:
+### Why Should the config be a class and not just a List of Dictionary
+1. Organized Configuration
+	* This allows you to group related configurations setting logically, making it easy to manage and extend. example you can add more configuration setting when the app grows
+2. Inheritance and Reusablility:
+	* You can create a base configuration class with common setting then extend it with sepcific configuration based on the different environment eg `class BaseConfig()` then you can have `class development(BaseConfig) and `class ProductionConfig(BaseConfig)`
+3. Default Values and Validations:
+	* A class can easily incorporate default values and provide validatoin logic. You can add methods to the class to compute or adjust configuration values dynamically based on other settings
+4. Flask natively supports loading configurations from class using `app.config.from_object()`. eg: `app.config.from_object(Config)`.
+5. Extensibility:
+	* Class is inherently more extensible. eg if you need more fonficuration later like reading from environment variables or files provides a natural place to encapsulate that logic
