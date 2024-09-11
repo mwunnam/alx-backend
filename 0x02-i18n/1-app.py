@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 
 class Config:
+    """Languge Configurations Class"""
     LANGUAGES = ["en", "fr"]
 
 
