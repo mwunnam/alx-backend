@@ -45,6 +45,7 @@ the files will have the extesion .po for human readable translation files and .m
 `.po` Portable Object
 `.mo` Machine Object
 ## Directory Structure:
+```
 /your_flask_app
 |-- /translations
 |   |-- /<language_code>
@@ -61,7 +62,7 @@ the files will have the extesion .po for human readable translation files and .m
 |       |-- /LC_MESSAGES
 |           |-- messages.po
 |           |-- messages.mo
-
+```
 ## Flask i18n
 Internationalization in Flask is the process of designing web application so that it can adpt to various language and regions without engineering changes. Flask-Babel does this by managing translations and locale data
 ### Steps for Flask i18n:
