@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Basic Flask App"""
 from flask import Flask
-from flask import g
 from flask import render_template
 from flask import request
 from flask_babel import Babel
@@ -28,6 +27,7 @@ def get_locale():
     """Determins the match with the supported languages"""
     accepted_languages = request.accept_languages
     best_match = accepted_languages.best_match(app.config['LANGUAGES'])
+
     return best_match or 'en'
 
 
